@@ -45,7 +45,7 @@ public class Passenger
         return processingTime;
     }
 
-    public void setMaxProcessingTime(int maxProcessTime)
+    public static void setMaxProcessingTime(int maxProcessTime)
     {
         maxProcessingTime = maxProcessTime;
     }

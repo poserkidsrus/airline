@@ -30,11 +30,11 @@ public class PassengerQueue
     }
 
     public void checkNewArrival(int clock, boolean showAll) {
-        if (Math.random() < arrivalRate) {
+        if (Math.random() < arrivalRate/60) {
             theQueue.add(new Passenger(clock));
             if (showAll) {
                 System.out.println("Time is "
-                    + clock + ": "
+                    + clock + "seconds: "
                     + queueName
                     + " arrival, new queue size is "
                     + theQueue.size());
@@ -68,9 +68,9 @@ public class PassengerQueue
         return numServed;
     }
     //enter arrivals per hour, divide by 60 in method to get rate of arrivals/minute
-    public void setArrivalRate(int arrivalSpeed)
+    public void setArrivalRate(double arrivalSpeed)
     {
-        this.arrivalRate = arrivalSpeed/60;
+        arrivalRate = arrivalSpeed/60;
     }
 
     public Queue <Passenger> getQueue()
