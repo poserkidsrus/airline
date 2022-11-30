@@ -57,17 +57,20 @@ public class AirlineCheckinSim
             maxProcessingTime = Integer.parseInt(input4);
             String input5 = JOptionPane.showInputDialog("What is the total simulation time in minutes?");
             totalTime = Integer.parseInt(input5);
-            int input6 = JOptionPane.showConfirmDialog(null,"Would you like to show a trace of this simulation?");
-            if(input6 == 0)
-            {
-                z = 'y';
-            }
+            
 
             i++;
         }
+        int input6 = JOptionPane.showConfirmDialog(null,"Would you like to show a trace of this simulation?");
+            if(input6 == 0)
+            {
+                showAll = true;
+            }
         frequentFlyerQueue.setArrivalRate(freqRate);
         regularPassengerQueue.setArrivalRate(regRate);
         Passenger.setMaxProcessingTime(maxProcessingTime*60);
+        
+        
     }
 
     public void runSimulation() {
